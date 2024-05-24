@@ -81,7 +81,7 @@ fi
 
 
 echo -e "${SEPARATOR}"
-echo -e "${CYAN} STEP 4: dotfiles${NC}"
+echo -e "${CYAN} STEP 4: Dotfiles${NC}"
 echo -e "${SEPARATOR}"
 
 step "Cloning .dotfiles"
@@ -105,23 +105,25 @@ echo -e "${SEPARATOR}"
 echo -e "${CYAN} STEP 5: Cleaning${NC}"
 echo -e "${SEPARATOR}"
 
-rm Dockerfile
-rm software.txt
-rm run_docker.sh
-rm script.sh
-rm README.md
-rm options_dnf
+step "Cleaning the mess..."
+rm -f Dockerfile
+rm -f software.txt
+rm -f run_docker.sh
+rm -f script.sh
+rm -f README.md
+rm -f options_dnf
 
-step "Finished!"
-
-echo -e <<EOF "${RED}${SEPARATOR}${NC}
+echo -e <<EOF "${CYAN}${SEPARATOR}
+${GREEN}Finished!${NC}
 Things that still are manual:
   Download and change GTK theme
   Download and change QT theme
-  Installing games"
+  Installing games
+${CYAN}${SEPARATOR}${NC}"
 EOF
 
 if [[ $fails > 0 ]]; then
+	echo -e ""
 	echo -e "${RED} Steps that failed:${NC}"
 	echo -e "${list_fails}"
 	echo -e "${RED} Please check errors file for more info ${NC}"

@@ -15,7 +15,8 @@ blueman
 brightnessctl
 lxappearance
 zsh
-nvim
+neovim
+stow
 
 ansible
 unrar
