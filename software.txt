@@ -17,6 +17,7 @@ lxappearance
 zsh
 neovim
 stow
+xrandr
 
 ansible
 unrar
